@@ -1,0 +1,142 @@
+'use client';
+
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+
+import { createNote } from '@/lib/api/clientApi';
+import { useNoteStore } from '@/lib/store/noteStore';
+import type { NoteTag } from '@/types/note';
+
+import css from './NoteForm.module.css';
+
+const tags: NoteTag[] = [
+  'Todo',
+  'Work',
+  'Personal',
+  'Meeting',
+  'Shopping',
+];
+
+export default function NoteForm() {
+  const router = useRouter();
+  const queryClient = useQueryClient();
+
+  const { draft, setDraft, clearDraft } = useNoteStore();
+
+  const createMutation = useMutation({
+    mutationFn: createNote,
+
+    onSuccess: () => {
+      clearDraft();
+
+      queryClient.invalidateQueries({
+        queryKey: ['notes'],
+      });
+
+      toast.success('Note created successfully');
+
+      router.push('/notes/filter/all');
+    },
+
+    onError: () => {
+      toast.error('Failed to create note');
+    },
+  });
+
+const handleSubmit = (formData: FormData) => {
+  const note = {
+    title: formData.get('title')?.toString() ?? '',
+    content: formData.get('content')?.toString() ?? '',
+    tag: formData.get('tag') as NoteTag,
+  };
+
+  createMutation.mutate(note);
+};
+
+  return (
+    <form
+  action={(formData) => handleSubmit(formData)}
+  className={css.form}
+>
+      <div className={css.formGroup}>
+        <label htmlFor="title">Title</label>
+
+        <input
+          id="title"
+          name="title"
+          className={css.input}
+          defaultValue={draft.title}
+          onChange={e =>
+            setDraft({
+              title: e.target.value,
+            })
+          }
+        />
+      </div>
+
+
+      <div className={css.formGroup}>
+        <label htmlFor="content">Content</label>
+
+        <textarea
+          id="content"
+          name="content"
+          rows={8}
+          className={css.textarea}
+          defaultValue={draft.content}
+          onChange={e =>
+            setDraft({
+              content: e.target.value,
+            })
+          }
+        />
+      </div>
+
+
+      <div className={css.formGroup}>
+        <label htmlFor="tag">Tag</label>
+
+        <select
+          id="tag"
+          name="tag"
+          className={css.select}
+          defaultValue={draft.tag}
+          onChange={e =>
+            setDraft({
+              tag: e.target.value as NoteTag,
+            })
+          }
+        >
+          {tags.map(tag => (
+            <option key={tag} value={tag}>
+              {tag}
+            </option>
+          ))}
+        </select>
+      </div>
+
+
+      <div className={css.actions}>
+        <button
+          type="button"
+          className={css.cancelButton}
+          onClick={() => router.back()}
+        >
+          Cancel
+        </button>
+
+
+        <button
+          type="submit"
+          className={css.submitButton}
+          disabled={createMutation.isPending}
+        >
+          {createMutation.isPending
+            ? 'Creating...'
+            : 'Create note'}
+        </button>
+      </div>
+    </form>
+  );
+}

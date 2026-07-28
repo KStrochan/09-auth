@@ -1,0 +1,26 @@
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuItem {
+  width: 100%;
+}
+
+.menuLink {
+  display: block;
+  padding: 10px 12px;
+  color: #1f2937;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.menuLink:hover {
+  background-color: #f3f4f6;
+}
