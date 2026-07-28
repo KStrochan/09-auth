@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(private routes)/layout,_N_T_/(private routes)/profile/layout,_N_T_/(private routes)/profile/edit/layout,_N_T_/(private routes)/profile/edit/page,_N_T_/profile/edit"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHByaXZhdGUgcm91dGVzKQ/profile/edit/__PAGE__",
+    "/!KHByaXZhdGUgcm91dGVzKQ/profile/edit",
+    "/!KHByaXZhdGUgcm91dGVzKQ/profile",
+    "/!KHByaXZhdGUgcm91dGVzKQ/@modal/__DEFAULT__",
+    "/!KHByaXZhdGUgcm91dGVzKQ",
+    "/_index",
+    "/_head"
+  ]
+}

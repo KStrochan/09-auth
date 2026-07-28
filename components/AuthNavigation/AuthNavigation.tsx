@@ -23,7 +23,7 @@ export default function AuthNavigation() {
     return (
       <>
         <li className={css.navigationItem}>
-          <a href="/profile" prefetch={false} className={css.navigationLink}>
+          <a href="/profile" className={css.navigationLink}>
             Profile
           </a>
         </li>
@@ -41,13 +41,13 @@ export default function AuthNavigation() {
   return (
     <>
       <li className={css.navigationItem}>
-        <a href="/sign-in" prefetch={false} className={css.navigationLink}>
+        <a href="/sign-in" className={css.navigationLink}>
           Login
         </a>
       </li>
 
       <li className={css.navigationItem}>
-        <a href="/sign-up" prefetch={false} className={css.navigationLink}>
+        <a href="/sign-up" className={css.navigationLink}>
           Sign up
         </a>
       </li>

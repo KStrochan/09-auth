@@ -1,0 +1,19 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(private routes)/layout,_N_T_/(private routes)/notes/layout,_N_T_/(private routes)/notes/action/layout,_N_T_/(private routes)/notes/action/create/layout,_N_T_/(private routes)/notes/action/create/page,_N_T_/notes/action/create"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KHByaXZhdGUgcm91dGVzKQ/notes/action/create/__PAGE__",
+    "/!KHByaXZhdGUgcm91dGVzKQ/notes/action/create",
+    "/!KHByaXZhdGUgcm91dGVzKQ/notes/action",
+    "/!KHByaXZhdGUgcm91dGVzKQ/notes",
+    "/!KHByaXZhdGUgcm91dGVzKQ/@modal/__DEFAULT__",
+    "/!KHByaXZhdGUgcm91dGVzKQ",
+    "/_index",
+    "/_head"
+  ]
+}

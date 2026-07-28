@@ -1,0 +1,3 @@
+module.exports=[63854,a=>{a.v({container:"layout-module__hf0PPq__container",notesWrapper:"layout-module__hf0PPq__notesWrapper",sidebar:"layout-module__hf0PPq__sidebar"})},45655,a=>{"use strict";var b=a.i(7997),c=a.i(63854);a.s(["default",0,function({children:a,sidebar:d}){return(0,b.jsxs)("section",{className:c.default.container,children:[(0,b.jsx)("aside",{className:c.default.sidebar,children:d}),(0,b.jsx)("div",{className:c.default.notesWrapper,children:a})]})}])},22291,a=>{a.n(a.i(45655))}];
+
+//# sourceMappingURL=app_%28private%20routes%29_notes_filter_0mscu3q._.js.map

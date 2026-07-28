@@ -1,0 +1,3 @@
+{
+  "/(private routes)/@modal/(.)notes/[id]/page": "app/(private routes)/@modal/(.)notes/[id]/page.js"
+}
