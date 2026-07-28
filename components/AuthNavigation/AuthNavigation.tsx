@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { logout as logoutApi } from '@/lib/api/clientApi';
 import { useAuthStore } from '@/lib/store/authStore';
@@ -23,9 +24,9 @@ export default function AuthNavigation() {
     return (
       <>
         <li className={css.navigationItem}>
-          <a href="/profile" className={css.navigationLink}>
+          <Link href="/profile" prefetch={false} className={css.navigationLink}>
             Profile
-          </a>
+          </Link>
         </li>
 
         <li className={css.navigationItem}>
@@ -41,15 +42,15 @@ export default function AuthNavigation() {
   return (
     <>
       <li className={css.navigationItem}>
-        <a href="/sign-in" className={css.navigationLink}>
+        <Link href="/sign-in" prefetch={false} className={css.navigationLink}>
           Login
-        </a>
+        </Link>
       </li>
 
       <li className={css.navigationItem}>
-        <a href="/sign-up" className={css.navigationLink}>
+        <Link href="/sign-up" prefetch={false} className={css.navigationLink}>
           Sign up
-        </a>
+        </Link>
       </li>
     </>
   );
